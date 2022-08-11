@@ -1,0 +1,44 @@
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    padding: 0;
+    background: linear-gradient(#2C3333, #395B64);
+}
+
+.controls {
+    border-radius: 100%;
+}
+
+.ctrlbuttons {
+    text-align: center;
+}
+
+.main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.start {
+    position: relative;
+}
+
+.end {
+    position: relative;
+    float: right;
+}
+
+.card-img-top {
+    height: 400px;
+    width: auto;
+}
+
+.card {
+    border-radius: 30px;
+    box-shadow: 5px 5px 4px #222222;
+}
