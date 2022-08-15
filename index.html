@@ -11,8 +11,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <script defer src="script.js"></script>
     <title>Groovy</title>
 </head>
 
@@ -21,19 +22,27 @@
         <div class="card">
             <center>
                 <p>Now Playing</p>
-                <img class="card-img-top" src="images/apocalypse.jpg" alt="Card image cap">
+                <img id="songcover" class="card-img-top" src="images/apocalypse.jpg" alt="Card image cap" >
             </center>
             <div class="card-body">
                 <h5 class="card-title">Song name</h5>
+                <audio id="song">
+                    <source src="music/Apocalypse.mp3" type="audio/mpeg">
+                </audio>
                 <input type="range" class="form-range" min="0" max="5" id="customRange2">
                 <span class="start">0:00</span>
                 <span class="end">3:00</span>
                 <div class="ctrlbuttons">
-                    <button type="button" class="controls btn btn-outline-dark"><i class="fa-solid fa-shuffle"></i></button>
-                    <button type="button" class="controls btn btn-outline-dark"><i class="fa-solid fa-backward"></i></button>
-                    <button type="button" class="controls btn btn-outline-dark"><i class="fa-solid fa-play"></i></button>
-                    <button type="button" class="controls btn btn-outline-dark"><i class="fa-solid fa-forward"></i></button>
-                    <button type="button" class="controls btn btn-outline-dark"><i class="fa-solid fa-list"></i></button>
+                    <button id="shufflebutton" type="button" class="controls btn btn-outline-dark"><i
+                            class="fa-solid fa-shuffle"></i></button>
+                    <button id="backbutton" type="button" class="controls btn btn-outline-dark"><i
+                            class="fa-solid fa-backward"></i></button>
+                    <button id="playbutton" type="button" class="controls btn btn-outline-dark" ><i
+                            class="fa-solid fa-play"></i></button>
+                    <button id="forwardbutton" type="button" class="controls btn btn-outline-dark"><i
+                            class="fa-solid fa-forward"></i></button>
+                    <button id="listbutton" type="button" class="controls btn btn-outline-dark"><i
+                            class="fa-solid fa-list"></i></button>
                 </div>
             </div>
         </div>
