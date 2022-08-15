@@ -5,8 +5,12 @@ let forwardbutton = document.getElementById("forwardbutton");
 let backbutton = document.getElementById("backbutton");
 let listbutton = document.getElementById("listbutton");
 let songcover = document.getElementById("songcover");
-let currentsong = 0;
+let slider = document.getElementById("customRange2");
 
+let currentsong = 0;
+let duration;
+slider.min = 0;
+slider.max = audio.duration;
 const songlist = [
     {
         img: './images/apocalypse.jpg',
@@ -45,6 +49,8 @@ const songlist = [
     }
 ]
 
+setInterval(setUpdate, 1000);
+
 function shuffleArr(array) {
     for (var i = array.length - 1; i > 0; i--) {
         var rand = Math.floor(Math.random() * (i + 1));
@@ -59,6 +65,9 @@ playbutton.addEventListener("click", () => {
     else {
         audio.pause();
     }
+    
+    duration = audio.duration;
+    slider.max = duration;
 });
 
 backbutton.addEventListener("click", () => {
@@ -67,6 +76,9 @@ backbutton.addEventListener("click", () => {
 
     audio.src = songlist[currentsong].music;
     songcover.src = songlist[currentsong].img;
+    duration = audio.duration;
+    slider.max = duration;
+    slider.value = 0;
     audio.play();
 });
 
@@ -76,6 +88,9 @@ forwardbutton.addEventListener("click", () => {
 
     audio.src = songlist[currentsong].music;
     songcover.src = songlist[currentsong].img;
+    duration = audio.duration;
+    slider.max = duration;
+    slider.value = 0;
     audio.play();
 });
 
@@ -84,5 +99,18 @@ shufflebutton.addEventListener("click", () => {
     currentsong = 0;
     audio.src = songlist[currentsong].music;
     songcover.src = songlist[currentsong].img;
+    duration = audio.duration;
+    slider.max = duration;
+    slider.value = 0;
     audio.play();
 });
+
+
+slider.addEventListener("click", () => {
+    audio.currentTime = slider.value;
+})
+
+function setUpdate() {
+    let current = audio.currentTime;
+    slider.value = current;
+}

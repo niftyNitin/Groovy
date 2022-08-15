@@ -6,7 +6,7 @@ body {
     margin: 0;
     height: 100%;
     padding: 0;
-    background: linear-gradient(#2C3333, #395B64);
+    background: #2C3333;
 }
 
 .controls {
@@ -34,11 +34,15 @@ body {
 }
 
 .card-img-top {
-    height: 400px;
-    width: auto;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
 }
 
 .card {
+    width: 400px;
+    height: auto;
+    background: #455f66;
     border-radius: 30px;
     box-shadow: 5px 5px 4px #222222;
 }
